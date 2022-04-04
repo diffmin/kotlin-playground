@@ -1,0 +1,39 @@
+syntax = "proto3";
+package tutorial;
+
+message ClassA {
+  int32 id = 1;
+  int32 idA = 2;
+}
+
+message ClassB {
+  int32 id = 1;
+  int32 idB = 2;
+}
+
+message ClassC  {
+  oneof testd {
+    ClassA testA = 1;
+    ClassB testB = 2;
+  }
+}
+
+message ClassD  {
+  oneof testg {
+    ClassA testA = 1;
+    ClassB testB = 2;
+  }
+  int32 id = 3;
+}
+
+message PersonR {
+  string name = 1;
+  int32 id = 2;  // Unique ID number for this person.
+  repeated ClassC emails = 3;
+}
+
+message Person {
+  string name = 1;
+  int32 id = 2;  // Unique ID number for this person.
+  ClassC emails = 3;
+}
